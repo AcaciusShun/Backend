@@ -73,11 +73,13 @@
 
             success : function (res) {
                 console.log(res);
+                console.log(res.code);
+                console.log(res.messages);
                 // alert(res);
                 if(res.code ==1) {
-                    alert(res.message);
+                    alert(res.messages);
                 }else {
-                    alert(res.message);
+                    alert(res.messages);
                 }
             }
         })
