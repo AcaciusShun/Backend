@@ -1,0 +1,30 @@
+.cl-link-blue {
+  color: #41A5E1 !important; }
+
+.first {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  border-top: 1px solid #ddd; }
+
+.two {
+  border-radius: 0 0 5px 5px;
+  overflow: hidden; }
+
+.third {
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  display: none; }
+
+.login-panel .controls.last {
+  border: none; }
+
+.bside {
+  margin-top: 12px;
+  overflow: hidden;
+  height: auto; }
+
+/*
+$Id: general.css 13504 2007-11-08 09:51:13Z weberliu $
+*/
+
+/*# sourceMappingURL=other.css.map */

@@ -1,0 +1,196 @@
+html,body{
+  height: 100%;
+}
+.top{
+  background: #303030;
+  height: 76px;
+
+  .logo_div{
+    margin: 20px 0 0 30px;
+    float: left;
+    width: 262px;
+    height: 45px;
+  }
+  .top_mean{
+    text-align: center;
+    width: 1000px;
+    position: absolute;
+    right: 0px;
+    height: 75px;
+    //background: #41A5E1;
+    ul{
+      margin: 0;
+      padding-left: 78px;
+      list-style-type: none;
+      li{
+        //background: #55a532;
+        width: 82px;
+        height: 75px;
+        float: left;
+
+        a{
+          text-align: center;
+          height: 67px;
+          width: 82px;
+          padding-top: 8px;
+          display: block;
+          text-decoration: none;
+          color: #FFF;
+
+          i{
+            margin: auto;
+            display: block;
+            height: 35px;
+            .iconfont{
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mean_div{
+  height: 41px;
+  background: #575757;
+  border-bottom: 1px solid #212121;
+  overflow: hidden;
+  ul{
+    margin: 0px 0px 0px 15px;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    li{
+      float: left;
+      display: block;
+      height: 41px;
+      line-height: 41px;
+      position: relative;
+      a{
+        float: left;
+        color: #FFFFFF;
+        padding: 0 12px;
+        display: block;
+        text-decoration: none;
+
+        span{
+          margin-left: 10px;
+          //vertical-align: middle;
+        }
+        .num{
+          width: 32px;
+          height: 16px;
+          display: inline-block;
+          line-height: 16px;
+          vertical-align: middle;
+          text-align: center;
+          background: url("../images/index-11_22.png");
+        }
+      }
+      .muneFG{
+        height: 13px;
+        width: 0;
+        border-right: 1px solid #656565;
+        margin-top: 15px;
+        border-left: 1px solid #303030;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+main {
+  //display: table;
+  height: 83%;
+  .left_con {
+    //display: table-cell;
+    width: 180px;
+    //height: 480px;
+    height: 100%;
+    overflow: auto;
+    #tabbar-div {
+      padding-left: 10px;
+      height: 34px;
+      padding-top: 0;
+      background: #303030;
+      p {
+        margin: 0;
+        .tab-front {
+          line-height: 33px;
+          font-weight: bold;
+          padding: 4px 15px 4px 18px;
+          cursor: pointer;
+          font-size: 14px;
+          font-family: "微软雅黑";
+          color: #FFFFFF;
+        }
+      }
+    }
+    #main-div {
+
+      #menu-list {
+        padding: 0;
+        margin: 0;
+        #menu-ul {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          color: #335B64;
+          li {
+            cursor: pointer;
+          }
+          .collapse {
+            text-indent: 40px;
+            display: block;
+            border-top: #7f7f7f 1px solid;
+            width: 100%;
+            color: #FFFFFF;
+            line-height: 42px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+//.ico_1 {
+//  background: #575757 url(../images/menu_1.png) 9px 0 no-repeat;
+//}
+
+@for $i from 1 through 16 {
+  .ico_#{$i} {
+    background: #575757 url(../images/menu_#{$i}.png) 9px 0 no-repeat;
+  }
+}
+@for $i from 1 through 16 {
+  .ico2_#{$i} {
+    background: #575757 url(../images/menu1_#{$i}.png) 9px 0 no-repeat;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
