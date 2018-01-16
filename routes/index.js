@@ -58,7 +58,7 @@ router.post('/api/regist4ajax', function(req, res,next) {
         });
 
     });
-    
+
 });
 
 router.get('/loginAction', function(req, res) {
