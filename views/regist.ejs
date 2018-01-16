@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>注册页面</title>
+    <link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/iconfont/iconfont.css">
+    <link rel="stylesheet" href="/css/other.css">
+</head>
+<body>
+<div class="login_body">
+    <div class="top_log">
+        <img src="images/shopex.png" alt="shoplogo">
+    </div>
+
+    <div class="center_con">
+        <div class="login-center">
+            <div class="logo">
+                <img src="images/ecshop-logo.png" alt="logo" width="373" height="103" border="0">
+            </div>
+        </div>
+        <div class="center_con_login">
+            <div class="login-panel">
+                <h3 class="panel-hd"></h3>
+                <div class="controls first">
+                    <span class="icon iconfont icon-account"></span>
+                    <input type="text" id="username" placeholder="用户名">
+                </div>
+                <div class="controls two">
+                    <span class="icon iconfont icon-mima"></span>
+                    <input type="password" id="password" placeholder="密码">
+                </div>
+                <div class="controls">
+                    <span class="icon iconfont icon-security"></span>
+                    <input type="text" id="captcha" class="captcha" placeholder="验证码">
+                    <div style="position: absolute; right: 8px; top: 8px;">
+                        <img src="images/download.png" width="102" height="34" border="1" alt="">
+                    </div>
+
+                </div>
+                <!--<div class="controls btn-a">-->
+                    <!--<button type="button" onclick="loginFunc()" style="color: #FFFFFF;background: #fc7878">登录</button>-->
+                <!--</div>-->
+                <button class="controls btn-a" type="button" onclick="registFunc()" style="color: #FFFFFF;background: #fc7878">注册</button>
+
+                <!--<div class="controls">-->
+                    <!--<input type="checkbox" name="remember" id="remember">-->
+                    <!--<lable>保存登录信息</lable>-->
+                    <!--<a class="link_forget" href="">忘记密码</a>-->
+                    <!--<a class="link_home" href="">去店铺首页>></a>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="act" value="signin">
+</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    function registFunc() {
+        // alert("nihao");
+        $.ajax({
+            url  : "/api/regist4ajax",
+            type : "post",
+            data : {
+                username : $("#username").val(),
+                password : $("#password").val(),
+                captcha  : $("#captcha").val()
+            },
+
+            success : function (res) {
+                console.log(res);
+                // alert(res);
+                if(res.code ==1) {
+                    alert(res.message);
+                }else {
+                    alert(res.message);
+                }
+            }
+        })
+    }
+
+</script>
+</html>
