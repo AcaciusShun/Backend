@@ -63,8 +63,10 @@
     function loginFunc() {
         // alert("nihao");
         $.ajax({
-            url  : "/loginAction",
-            type : "get",
+            // url  : "/loginAction",
+            // type : "get",
+            url  : "/api/login4ajax",
+            type : "post",
             data : {
                 username : $("#username").val(),
                 password : $("#password").val(),
@@ -72,7 +74,13 @@
             },
 
             success : function (res) {
-                alert(res);
+                console.log(res);
+                if(res.code == 1) {
+                    alert(res.messages);
+                    // location.href = "/dashboard?r=" + new Date().getTime();
+                } else {
+                    alert(res.messages);
+                }
             }
         })
     }
