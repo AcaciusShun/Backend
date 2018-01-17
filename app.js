@@ -32,9 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret : 'shop',
-    resave : false,
-    saveUninitialized : true,
-    cookie : { secure :true}
+    resave : true,
+    saveUninitialized : false,
+    // cookie : { secure :true}
 }))
 
 
