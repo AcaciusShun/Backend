@@ -9,17 +9,22 @@
 * route    路由目录
 * views  模板目录
 * app.js 配置主文件
-* package.json 安装模块信息
+* package.json 安装模块信息  
+
 ##环境要求
 1.  Npm
 2.  Ruby
 3.  Express
 4.  MongoDB
-5.  ...
+5.  ...  
+  
+  
 ##环境部署标准步骤
 
+  
+  
+##许可协议 LIcense  
 
-##许可协议 LIcense
 MIT
 
 
