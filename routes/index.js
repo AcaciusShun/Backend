@@ -41,7 +41,7 @@ router.post('/api/login4ajax', function(req, res,next) {
         }else{
             //登录成功后生成session
             req.session.username = username;
-
+            // console.log(req.session);
         }
         res.json(result);
     })
@@ -109,7 +109,8 @@ router.get('/admin', function(req, res) {
     //判断用户是否登录，如果没登录 跳转到login页面
 
     if(req.session == null || req.session.username == null){
-        res.render("login",{});
+        // res.render("login",{});
+        res.redirect("/login");//重定向
     }
 
     res.render("admin",{});
