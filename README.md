@@ -1,6 +1,6 @@
 Backend  
 ---
-[Backend](https://github.com/bailongctui/Backend)是一个基于NodeJS + Express + MongoDB的后台管理系统demo。  
+[Backend](https://github.com/bailongctui/Backend)是一个基于**NodeJS** + **Express** + **MongoDB**的后台管理系统demo。  
 
 此项目的主要模块有：
 * bin       启动脚本目录
