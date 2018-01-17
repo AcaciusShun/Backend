@@ -5,6 +5,8 @@ var UserModel = require('../model/User');
 var md5 = require('md5');
 
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	//render是调用ejs模板 生成页面
@@ -36,6 +38,10 @@ router.post('/api/login4ajax', function(req, res,next) {
         if (docs.length == 0){
             result.code = -101;
             result.messages = "账号或密码错误，请重新登录"
+        }else{
+            //登录成功后生成session
+            req.session.username = username;
+
         }
         res.json(result);
     })
@@ -100,6 +106,11 @@ router.get('/loginAction', function(req, res) {
 });
 
 router.get('/admin', function(req, res) {
+    //判断用户是否登录，如果没登录 跳转到login页面
+
+    if(req.session == null || req.session.username == null){
+        res.render("login",{});
+    }
 
     res.render("admin",{});
 
