@@ -19,6 +19,31 @@ router.get('/login', function(req, res,next) {
 router.get('/regist', function(req, res, next) {
     res.render("regist",{});
 });
+
+
+router.post('/api/login4ajax', function(req, res,next) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    var result = {
+        code : 1,
+        messages : "登录成功"
+    };
+
+    // UserModel.find( {username : username, password : md5(password)} ,(err,docs)=>{
+    UserModel.find({username: username,password:md5(password)},function (err,docs) {
+
+        if (docs.length == 0){
+            result.code = -101;
+            result.messages = "账号或密码错误，请重新登录"
+        }
+        res.json(result);
+    })
+
+
+});
+
+
 router.post('/api/regist4ajax', function(req, res,next) {
     // res.render("regist",{});
     var username = req.body.username;
@@ -62,17 +87,16 @@ router.post('/api/regist4ajax', function(req, res,next) {
 });
 
 router.get('/loginAction', function(req, res) {
-    if (req.query.username == "admin" && req.query.password =="123" ){
+
         if (req.query.captcha == "GYDS"){
-            res.send("登陆成功");
+            if (req.query.username == "admin" && req.query.password =="123" ){
+                res.send("登陆成功");
+            }else {
+                res.send("登陆失败");
+            }
         }else{
             res.send("验证码错误");
         }
-    }else {
-        res.send("登陆失败");
-    }
-
-
 });
 
 router.get('/admin', function(req, res) {
