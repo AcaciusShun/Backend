@@ -101,14 +101,15 @@ html,body{
 }
 
 main {
-  //display: table;
-  height: 83%;
+  //position: relative;
+  //height: 100%;
   .left_con {
-    //display: table-cell;
     width: 180px;
-    //height: 480px;
-    height: 100%;
+    //height: 100%;
     overflow: auto;
+    position: absolute;
+    top: 118px;
+    bottom: 0;
     #tabbar-div {
       padding-left: 10px;
       height: 34px;

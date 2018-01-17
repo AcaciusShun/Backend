@@ -79,45 +79,45 @@ html, body {
         border-left: 1px solid #303030;
         display: inline-block; }
 
-main {
-  height: 83%; }
-  main .left_con {
-    width: 180px;
-    height: 100%;
-    overflow: auto; }
-    main .left_con #tabbar-div {
-      padding-left: 10px;
-      height: 34px;
-      padding-top: 0;
-      background: #303030; }
-      main .left_con #tabbar-div p {
-        margin: 0; }
-        main .left_con #tabbar-div p .tab-front {
-          line-height: 33px;
-          font-weight: bold;
-          padding: 4px 15px 4px 18px;
-          cursor: pointer;
-          font-size: 14px;
-          font-family: "微软雅黑";
-          color: #FFFFFF; }
-    main .left_con #main-div #menu-list {
-      padding: 0;
+main .left_con {
+  width: 180px;
+  overflow: auto;
+  position: absolute;
+  top: 118px;
+  bottom: 0; }
+  main .left_con #tabbar-div {
+    padding-left: 10px;
+    height: 34px;
+    padding-top: 0;
+    background: #303030; }
+    main .left_con #tabbar-div p {
       margin: 0; }
-      main .left_con #main-div #menu-list #menu-ul {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-        color: #335B64; }
-        main .left_con #main-div #menu-list #menu-ul li {
-          cursor: pointer; }
-        main .left_con #main-div #menu-list #menu-ul .collapse {
-          text-indent: 40px;
-          display: block;
-          border-top: #7f7f7f 1px solid;
-          width: 100%;
-          color: #FFFFFF;
-          line-height: 42px;
-          text-align: left; }
+      main .left_con #tabbar-div p .tab-front {
+        line-height: 33px;
+        font-weight: bold;
+        padding: 4px 15px 4px 18px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: "微软雅黑";
+        color: #FFFFFF; }
+  main .left_con #main-div #menu-list {
+    padding: 0;
+    margin: 0; }
+    main .left_con #main-div #menu-list #menu-ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      color: #335B64; }
+      main .left_con #main-div #menu-list #menu-ul li {
+        cursor: pointer; }
+      main .left_con #main-div #menu-list #menu-ul .collapse {
+        text-indent: 40px;
+        display: block;
+        border-top: #7f7f7f 1px solid;
+        width: 100%;
+        color: #FFFFFF;
+        line-height: 42px;
+        text-align: left; }
 
 .ico_1 {
   background: #575757 url(../images/menu_1.png) 9px 0 no-repeat; }
