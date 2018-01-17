@@ -77,6 +77,7 @@
                 console.log(res);
                 if(res.code == 1) {
                     alert(res.messages);
+                    location.href = "/admin?r=" + new Date().getTime();
                     // location.href = "/dashboard?r=" + new Date().getTime();
                 } else {
                     alert(res.messages);
