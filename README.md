@@ -1,4 +1,4 @@
-#Backend  
+Backend  
 ---
 [Backend](https://github.com/bailongctui/Backend)是一个基于NodeJS + Express + MongoDB的后台管理系统demo。  
 
@@ -11,7 +11,8 @@
 * app.js 配置主文件
 * package.json 安装模块信息  
 
-##环境要求
+环境要求
+---
 1.  Npm
 2.  Ruby
 3.  Express
@@ -19,12 +20,13 @@
 5.  ...  
   
   
-##环境部署标准步骤
+环境部署标准步骤
+---
 
   
   
-##许可协议 LIcense  
-
+许可协议 LIcense  
+---
 MIT
 
 
