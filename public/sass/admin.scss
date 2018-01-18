@@ -46,6 +46,9 @@ html,body{
             }
           }
         }
+        a:hover{
+          background-color: #575757;
+        }
       }
     }
   }
@@ -88,6 +91,9 @@ html,body{
           background: url("../images/index-11_22.png");
         }
       }
+      a:hover{
+        background-color: #212121;
+      }
       .muneFG{
         height: 13px;
         width: 0;
@@ -101,15 +107,24 @@ html,body{
 }
 
 main {
-  //position: relative;
-  //height: 100%;
+  position: relative;
+  border-left: 180px solid #55a532;
+  vertical-align: bottom;
+  display: inline-block;
+  //height: 80%;
+  //overflow: auto;
+
   .left_con {
     width: 180px;
-    //height: 100%;
+    float: left;
     overflow: auto;
-    position: absolute;
-    top: 118px;
-    bottom: 0;
+    margin-left: -180px;
+    position: relative;
+    z-index: 100;
+    //top: 118px;
+    height: 800px;
+    overflow: auto;
+    //bottom: 0;
     #tabbar-div {
       padding-left: 10px;
       height: 34px;
@@ -141,6 +156,9 @@ main {
           li {
             cursor: pointer;
           }
+          li:hover{
+            background-color: #303030;
+          }
           .collapse {
             text-indent: 40px;
             display: block;
@@ -150,11 +168,65 @@ main {
             line-height: 42px;
             text-align: left;
           }
+          ul{
+            //display: none;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            color: #335B64;
+          }
+          .menu-item {
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            font-weight: normal;
+            background: #575757;
+            a{
+              font-size: 12px;
+              height: 30px;
+              line-height: 30px;
+              display: block;
+              color: #d7d7d7;
+              text-decoration: none;
+            }
+            a:hover{
+              background-color: #7f7f7f;
+            }
+          }
         }
       }
     }
   }
+
 }
+//.toggleMenu{
+//  width: 10px;
+//  //float: left;
+//  left: 180px;
+//  overflow: auto;
+//  position: absolute;
+//  top: 118px;
+//  bottom: 0;
+//  background-color: #41A5E1;
+//}
+
+iframe{
+  float: left;
+  background: #55a532;
+  min-height: 100px;
+  //min-width: 100px;
+  html{
+    body{
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+
+
+
 
 //.ico_1 {
 //  background: #575757 url(../images/menu_1.png) 9px 0 no-repeat;
