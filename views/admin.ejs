@@ -86,14 +86,14 @@
     </div>
     <div class="mean_div">
         <ul>
-            <li><a href="/"><i class="iconfont icon-home"></i><span>起始页</span></a>
+            <li><a href="javascript:void(0)"><i class="iconfont icon-home"></i><span>起始页</span></a>
 			<span class="muneFG"></span>
             </li>
-            <li><a href="/"><i class="iconfont icon-buju_daohanglan"></i><span>设置导航栏</span></a>
+            <li><a href="javascript:void(0)"><i class="iconfont icon-buju_daohanglan"></i><span>设置导航栏</span></a>
 			<span class="muneFG"></span>
             </li>
             <li>
-            	<a href="/">
+            	<a href="javascript:void(0)">
             		<i class="iconfont icon-shangpin"></i>
             		<span>商品管理</span>
 					<span class="num">5</span>
@@ -101,7 +101,7 @@
 			<span class="muneFG"></span>
         </li>
             <li>
-            	<a href="/">
+            	<a href="javascript:void(0)">
             		<i class="iconfont icon-dingdan"></i>
             		<span>订单管理</span>
 					<span class="num">0</span>
@@ -109,7 +109,7 @@
 			<span class="muneFG"></span>
         </li>
             <li>
-            	<a href="/">
+            	<a href="javascript:void(0)">
             		<i class="iconfont icon-guanggao"></i>
             		<span>广告管理</span>
 					<span class="num">0</span>
@@ -117,20 +117,20 @@
 			<span class="muneFG"></span>
         </li>
             <li>
-            	<a href="/">
+            	<a href="javascript:void(0)">
             		<i class="iconfont icon-pinglun"></i>
             		<span>用户评论</span>
 					<span class="num">1</span>
             </a>
 			<span class="muneFG"></span>
         </li>
-            <li><a href="/">商品列表</a></li>
-            <li><a href="/">订单列表</a></li>
-            <li><a href="/">用户评论</a></li>
-            <li><a href="/">会员列表</a></li>
-            <li><a href="/">商店设置</a></li>
-            <li><a href="/">移动版</a></li>
-            <li><a href="/">服务市场</a></li>
+            <li><a href="javascript:void(0)">商品列表</a></li>
+            <li><a href="javascript:void(0)">订单列表</a></li>
+            <li><a href="javascript:void(0)">用户评论</a></li>
+            <li><a href="javascript:void(0)">会员列表</a></li>
+            <li><a href="javascript:void(0)">商店设置</a></li>
+            <li><a href="javascript:void(0)">移动版</a></li>
+            <li><a href="javascript:void(0)">服务市场</a></li>
         </ul>
 
     </div>
@@ -147,8 +147,8 @@
                     <ul id="menu-ul">
                         <li class="collapse ico_1">
                             商品管理        <ul style="display:none;">
-                            <li class="menu-item"><a href="" target="content">商品列表</a></li>
-                            <li class="menu-item"><a href="" target="content">添加新商品</a></li>
+                            <li class="menu-item"><a href="/goods_list.html" target="content">商品列表</a></li>
+                            <li class="menu-item"><a href="/goods_add.html" target="content">添加新商品</a></li>
                             <li class="menu-item"><a href="javascript:void(0);">商品分类</a></li>
                             <li class="menu-item"><a href="javascript:void(0);">用户评论</a></li>
                             <li class="menu-item"><a href="javascript:void(0);">商品品牌</a></li>
@@ -327,7 +327,9 @@
 
 
 
-        <iframe src="" frameborder="0" frameborder="0" id="content" name="content"></iframe>
+        <iframe src="" frameborder="0" id="content" name="content">
+
+        </iframe>
     </main>
 
 
@@ -342,7 +344,7 @@
     
     $("li.collapse>ul>li").click(function (e) {
         e.stopPropagation();
-        e.preventDefault()
+        // e.preventDefault()
     })
 
     // function leftHei() {
@@ -358,7 +360,7 @@
         var Width = $(window).width();
 
         var leftHeight = Height - 119 ;
-        console.log(leftHeight);
+        // console.log(leftHeight);
         $(".left_con").css("height",leftHeight);
 
         var iframeWid = Width -180;
@@ -369,11 +371,11 @@
     $(window).resize(function(){
         var Height = $(window).height();
         var Width = $(window).width();
-        console.log(Height);
-        console.log(Width);
+        // console.log(Height);
+        // console.log(Width);
 
         var leftHeight = Height - 119 ;
-        console.log(leftHeight);
+        // console.log(leftHeight);
         $(".left_con").css("height",leftHeight);
 
         var iframeWid = Width -180;
