@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -29,25 +28,20 @@
 <div style="clear:both"></div>
 </h1>
     <!-- 商品搜索 -->
-    
     <div class="form-div">
         <form action="javascript:searchGoods()" name="searchForm">
             <img src="images/icon_search.gif" alt="SEARCH" width="26" height="22" border="0">
             <!-- 分类 -->
             <select name="cat_id">
                 <option value="0" selected="selected">所有分类</option>
-
             </select>
             <!-- 品牌 -->
             <select name="brand_id">
                 <option value="0" selected="selected">所有品牌</option>
-
-                
             </select>
             <!-- 推荐 -->
             <select name="intro_type">
                 <option value="0" selected="selected">全部</option>
-
             </select>
             <!-- 上架 -->
             <select name="is_on_sale">
@@ -58,7 +52,7 @@
             <!-- 关键字 -->
             关键字
             <input name="keyword" size="15" type="text">
-            <input value=" 搜索 " class="button" type="submit">
+            <input value=" 搜索 " class="button" type="submit" onclick="find()">
         </form>
     </div>
     <script language="JavaScript">
@@ -76,7 +70,7 @@
     }
     </script>
     <!-- 商品列表 -->
-    <form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
+    <div>
         <!-- start goods list -->
         <div class="list-div" id="listDiv">
             <table cellspacing="1" cellpadding="3">
@@ -102,338 +96,45 @@
                     <tr>
                         <td>
                             <input name="checkboxes[]" value="231" type="checkbox">231</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 231)">冰糖葫芦娃</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 231)">ECS0</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 231)">0.00
-    </span></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 231)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 231)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 231)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 231)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 231)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 231)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 231)">0</span></td>
+                        <td class="first-cell" style=""><span>冰糖葫芦娃</span></td>
+                        <td align="center"><span>ECS0</span></td>
+                        <td align="center"><span>0.00</span></td>
+                        <td align="center"><img src="images/no.gif"></td>
+                        <td align="center"><img src="images/no.gif"></td>
+                        <td align="center"><img src="images/no.gif"></td>
+                        <td align="center"><img src="images/no.gif"></td>
+                        <td align="center"><span>100</span></td>
+                        <td align="center"><span>1</span></td>
+                        <td align="center"><span>0</span></td>
                         <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=231" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=231&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=231&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(231, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: rgb(244, 250, 251);">
-                            <input name="checkboxes[]" value="230" type="checkbox">230</td>
-                        <td class="first-cell" style="background-color: rgb(244, 250, 251);"><span onclick="listTable.edit(this, 'edit_goods_name', 230)">aaa</span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 230)">ECS000230</span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 230)">0.00
-    </span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 230)"></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 230)"></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_new', 230)"></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_hot', 230)"></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 230)">100</span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 230)">1</span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 230)">0</span></td>
-                        <td style="background-color: rgb(244, 250, 251);" align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=230" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=230&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=230&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(230, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: rgb(255, 255, 255);">
-                            <input name="checkboxes[]" value="227" type="checkbox">227</td>
-                        <td class="first-cell" style="background-color: rgb(255, 255, 255);"><span onclick="listTable.edit(this, 'edit_goods_name', 227)">fsfsdf</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 227)">ECS000227</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 227)">0.00
-    </span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 227)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 227)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 227)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 227)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 227)">100</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 227)">1</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 227)">0</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=227" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=227&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=227&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(227, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: rgb(255, 255, 255);">
-                            <input name="checkboxes[]" value="226" type="checkbox">226</td>
-                        <td class="first-cell" style="background-color: rgb(255, 255, 255);"><span onclick="listTable.edit(this, 'edit_goods_name', 226)">sad</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 226)">ECS000226</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 226)">0.00
-    </span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 226)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 226)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 226)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 226)"></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 226)">100</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 226)">1</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 226)">0</span></td>
-                        <td style="background-color: rgb(255, 255, 255);" align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=226" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=226&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=226&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(226, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="224" type="checkbox">224</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 224)">56</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 224)">ECS000224</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 224)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 224)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 224)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 224)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 224)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 224)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 224)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 224)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=224" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=224&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=224&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(224, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="222" type="checkbox">222</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 222)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 222)">ECS000222</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 222)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 222)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 222)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 222)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 222)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 222)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 222)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 222)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=222" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=222&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=222&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(222, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="221" type="checkbox">221</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 221)">22222</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 221)">ECS000221</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 221)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 221)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 221)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 221)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 221)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 221)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 221)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 221)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=221" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=221&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=221&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(221, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="219" type="checkbox">219</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 219)">good</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 219)">ECS000219</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 219)">0.00
-    </span></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 219)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 219)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 219)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 219)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 219)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 219)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 219)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=219" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=219&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=219&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(219, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="214" type="checkbox">214</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 214)">很反感很反感</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 214)">ECS000214</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 214)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 214)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 214)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 214)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 214)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 214)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 214)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 214)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=214" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=214&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=214&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(214, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="213" type="checkbox">213</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 213)">打发斯蒂芬</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 213)">ECS000213</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 213)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 213)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_best', 213)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 213)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 213)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 213)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 213)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 213)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=213" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=213&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=213&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(213, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="212" type="checkbox">212</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 212)">东方闪电</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 212)">ECS000212</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 212)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 212)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_best', 212)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_new', 212)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 212)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 212)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 212)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 212)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=212" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=212&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=212&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(212, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="211" type="checkbox">211</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 211)">大叔大婶大所多</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 211)">ECS000211</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 211)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 211)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 211)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 211)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_hot', 211)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 211)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 211)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 211)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=211" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=211&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=211&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(211, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="210" type="checkbox">210</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 210)">大时代</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 210)">ECS000210</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 210)">0.00
-    </span></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 210)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_best', 210)"></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_new', 210)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 210)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 210)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 210)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 210)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=210" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=210&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=210&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(210, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="209" type="checkbox">209</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 209)">大大</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 209)">ECS000209</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 209)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 209)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 209)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 209)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 209)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 209)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 209)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 209)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=209" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=209&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=209&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(209, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="208" type="checkbox">208</td>
-                        <td class="first-cell" style=""><span onclick="listTable.edit(this, 'edit_goods_name', 208)">共和国</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_sn', 208)">ECS000208</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_price', 208)">0.00
-    </span></td>
-                        <td align="center"><img src="images/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 208)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_best', 208)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_new', 208)"></td>
-                        <td align="center"><img src="images/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 208)"></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_sort_order', 208)">100</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_goods_number', 208)">1</span></td>
-                        <td align="center"><span onclick="listTable.edit(this, 'edit_virtual_sales', 208)">0</span></td>
-                        <td align="center">
-                            <a href="http://www.doudoufei.top/shops/goods.php?id=208" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=edit&amp;goods_id=208&amp;extension_code=" title="编辑"><img src="images/icon_edit.gif" width="21" height="21" border="0"></a>
-                            <a href="http://www.doudoufei.top/shops/admin/goods.php?act=copy&amp;goods_id=208&amp;extension_code=" title="复制"><img src="images/icon_copy.gif" width="21" height="21" border="0"></a>
-                            <a href="javascript:;" onclick="listTable.remove(208, '您确实要把该商品放入回收站吗？')" title="回收站"><img src="images/icon_trash.gif" width="21" height="21" border="0"></a>
-                            <img src="images/empty.gif" width="21" height="21" border="0"> </td>
+                            <a href="" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
+                            <a href=" " title=" 编辑 "><img src="images/icon_edit.gif " width="21 " height="21 " border="0 "></a>
+                            <a href=" " title="复制 "><img src="images/icon_copy.gif " width="21 " height="21 " border="0 "></a>
+                            <a href="javascript:; " title="回收站 "><img src="images/icon_trash.gif " width="21 " height="21 " border="0 "></a>
+                            <img src="images/empty.gif " width="21 " height="21 " border="0 "> </td>
                     </tr>
                 </tbody>
             </table>
             <!-- end goods list -->
             <!-- 分页 -->
-            <table id="page-table" cellspacing="0">
+            <table id="page-table " cellspacing="0 ">
                 <tbody>
                     <tr>
-                        <td nowrap="true" align="right">
+                        <td nowrap="true " align="right ">
                             <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-                            <div id="turn-page">
-                                总计 <span id="totalRecords">21</span> 个记录分为 <span id="totalPages">2</span> 页当前第 <span id="pageCurrent">1</span> 页，每页
-                                <input size="3" id="pageSize" value="15" onkeypress="return listTable.changePageSize(event)" type="text">
-                                <span id="page-link">
-          <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-          <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-          <a href="javascript:listTable.gotoPageNext()">下一页</a>
-          <a href="javascript:listTable.gotoPageLast()">最末页</a>
-          <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-            <option value="1" selected="selected">1</option><option value="2">2</option>          </select>
-        </span>
+                            <div id="turn-page ">
+                                总计 <span id="totalRecords ">21</span> 个记录分为 <span id="totalPages ">2</span> 页当前第 <span id="pageCurrent ">1</span> 页，每页
+                                <input size="3 " id="pageSize " value="15 " onkeypress="return listTable.changePageSize(event) " type="text ">
+                                <span id="page-link ">
+						          <a href=" ">第一页</a>
+						          <a href=" ">上一页</a>
+						          <a href=" ">下一页</a>
+						          <a href=" ">最末页</a>
+							      <select id="gotoPage ">
+						            <option value="1 " selected="selected ">1</option>
+						            <option value="2 ">2</option>          
+							      </select>
+        						</span>
                             </div>
                         </td>
                     </tr>
@@ -441,73 +142,80 @@
             </table>
         </div>
         <div>
-            <input name="act" value="batch" type="hidden">
-            <select name="type" id="selAction" onchange="changeAction()">
-                <option value="" selected="selected">请选择...</option>
-
+            <input name="act " value="batch " type="hidden ">
+            <select name="type " id="selAction " onchange="changeAction() ">
+                <option value=" " selected="selected ">请选择...</option>
             </select>
-            <select name="target_cat" style="display:none">
-                <option value="0" selected="selected">请选择...</option>
-                
+            <select name="target_cat " style="display:none ">
+                <option value="0 " selected="selected ">请选择...</option>
             </select>
-            <input name="extension_code" value="" type="hidden">
-            <input value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" type="submit">
+            <input name="extension_code " value=" " type="hidden ">
+            <input value=" 确定 " id="btnSubmit " name="btnSubmit " class="button " disabled="true " type="submit ">
         </div>
-    </form>
-   
-    <div id="footer">
-        共执行 N  个查询，用时 xxx 秒，Gzip 已禁用，内存占用 3.562 MB
+    </div>
+    <div id="footer ">
+        共执行 N 个查询，用时 xxx 秒，Gzip 已禁用，内存占用 3.562 MB
         <br> 版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
     <!-- 新订单提示信息 -->
-    <div id="popMsg">
-        <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#cfdef4">
+    <div id="popMsg ">
+        <table width="100% " cellspacing="0 " cellpadding="0 " border="0 " bgcolor="#cfdef4 ">
             <tbody>
                 <tr>
-                    <td style="color: #0f2c8c" width="30" height="24"></td>
-                    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" width="100%" valign="center"> 新订单通知</td>
-                    <td style="padding-top: 2px;padding-right:2px" width="19" valign="center" align="right"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()">×</span>
-                        <!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="msgclose.jpg"> --></td>
+                    <td style="color: #0f2c8c " width="30 " height="24 "></td>
+                    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px " width="100% " valign="center "> 新订单通知</td>
+                    <td style="padding-top: 2px;padding-right:2px " width="19 " valign="center " align="right "><span title="关闭 " style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px; " onclick="Message.close() ">×</span>
+                        <!-- <img title=关闭 style="cursor: hand " onclick=closediv() hspace=3 src="msgclose.jpg "> --></td>
                 </tr>
                 <tr>
-                    <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">
-                        <div id="popMsgContent">
-                            <p>您有 <strong style="color:#ff0000" id="spanNewOrder">1</strong> 个新订单以及 <strong style="color:#ff0000" id="spanNewPaid">0</strong> 个新付款的订单</p>
-                            <p style="word-break:break-all" align="center"><a href="http://www.doudoufei.top/shops/admin/order.php?act=list"><span style="color:#ff0000">点击查看新订单</span></a></p>
+                    <td style="padding-right: 1px; padding-bottom: 1px " colspan="3 " height="70 ">
+                        <div id="popMsgContent ">
+                            <p>您有 <strong style="color:#ff0000 " id="spanNewOrder ">1</strong> 个新订单以及 <strong style="color:#ff0000 " id="spanNewPaid ">0</strong> 个新付款的订单</p>
+                            <p style="word-break:break-all " align="center "><a href="http://www.doudoufei.top/shops/admin/order.php?act=list "><span style="color:#ff0000 ">点击查看新订单</span></a></p>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <script language="JavaScript">
-   
-        document.getElementById("listDiv").onclick = function(e) {
-            var obj = Utils.srcElement(e);
+    <script language="JavaScript ">
+    document.getElementById("listDiv ").onclick = function(e) {
+        var obj = Utils.srcElement(e);
 
-            if (obj.tagName == "INPUT" && obj.type == "checkbox") {
-                if (!document.forms['listForm']) {
-                    return;
-                }
-                var nodes = document.forms['listForm'].elements;
-                var checked = false;
+        if (obj.tagName == "INPUT " && obj.type == "checkbox ") {
+            if (!document.forms['listForm']) {
+                return;
+            }
+            var nodes = document.forms['listForm'].elements;
+            var checked = false;
 
-                for (i = 0; i < nodes.length; i++) {
-                    if (nodes[i].checked) {
-                        checked = true;
-                        break;
-                    }
+            for (i = 0; i < nodes.length; i++) {
+                if (nodes[i].checked) {
+                    checked = true;
+                    break;
                 }
-                if (document.getElementById("btnSubmit")) {
-                    document.getElementById("btnSubmit").disabled = !checked;
-                }
-                for (i = 1; i <= 10; i++) {
-                    if (document.getElementById("btnSubmit" + i)) {
-                        document.getElementById("btnSubmit" + i).disabled = !checked;
-                    }
+            }
+            if (document.getElementById("btnSubmit ")) {
+                document.getElementById("btnSubmit ").disabled = !checked;
+            }
+            for (i = 1; i <= 10; i++) {
+                if (document.getElementById("btnSubmit " + i)) {
+                    document.getElementById("btnSubmit " + i).disabled = !checked;
                 }
             }
         }
+    }
     </script>
 </body>
+<script type="text/javascript">
+	function find(){
 
+
+
+
+
+	}
+
+
+
+</script>
 </html>
