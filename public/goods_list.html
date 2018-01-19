@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="css/list.css"/>
-        <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     </head>
     <body>
         <h1>
-            <span class="h1_span1"><a href="#">ECSHOP管理中心</a></span>
-            <span class="h1_span1">- 商品列表</span>
-            <span class="h1_span3"><a href="#"><img src="images/jnsy.png"/></a></span>
-            <span class="h1_span4">添加新商品</span>
+            <span class="top_span1"><a href="#">ECSHOP管理中心</a></span>
+            <span class="top_span1">- 商品列表</span>
+            <span class="top_span3"><a href="#"><img src="images/jnsy.png"/></a></span>
+            <span class="top_span4">添加新商品</span>
         </h1>
         <div id="form_select">
             <img src="images/icon_search.gif"/>
@@ -28,7 +28,7 @@
                 <option value="">全部</option>
             </select>
             关键字
-            <input type="text" name="text" id="text" value="" />
+            <input type="text" name="text" id="key" value="" />
             <input type="button" name="btn" id="btn" class="search" value="搜索" />
         </div>
         <div id="shop_list">
@@ -75,6 +75,74 @@
             <p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
         </div>
     </body>
+    <script>
+        // var key = $("#key").val();
+        var page_now = $(".PageNow").val();
+        var page_include_num = $(".page_include").val();
 
+        var shoplistUl = $(".shop_list_ul");
+        var recordAll = $(".recordAll");
+        var pageAll = $(".pageAll");
+        var currentPage = $(".currentPage");
+        var pageRecord = $(".pageRecord");
+        var selectPage = $(".selectPage");
+        var currentOption = $(".selectPage .on").html();
+        var firstPage = $(".firstpage");
+        var lastPage = $(".lastpage");
+        var upPage = $(".uppage");
+        var downPage = $(".nextpage");
+        var keyWord = $("#key").val();
+        var search = $(" .search");
+        loading();
+
+        function loading() {
+
+            $.ajax({
+                url : "/api/find",
+                type : "post",
+                data:{
+                    key : keyWord,
+                    pageNow : currentOption,
+                    pageRecord : pageRecord.val()
+                },
+                success:function (res) {
+                    console.log(res);
+                    var data = res.res;
+
+                    for(var key in data){
+                        var li ="";
+                        li +=
+                            `<li class="shop_list_head shop_list_li">
+						<ul>
+						<li class="shop_num"><input type="checkbox"id="" value="" />141</li>
+						<li class="shop_name">${data[key].goodsname}</li>
+						<li class="shop_hh">${data[key].goodsnum}</li>
+						<li class="shop_price">${data[key].goodsprice}</li>
+						<li><img src="images/yes.gif"/></li>
+						<li><img src="images/yes.gif"/></li>
+						<li><img src="images/yes.gif"/></li>
+						<li><img src="images/yes.gif"/></li>
+						<li>100</li>
+						<li>98</li>
+						<li>${data[key].goodsshop}</li>
+						<li class="shop_use"><a href=""><img src="images/icon_edit.gif" alt="" /></a><a href=""><img src="images/icon_trash.gif"/></a></li>
+						</ul>
+					</li>
+					`;
+                        shoplistUl.append(li);
+                    }
+                }
+            })
+        }
+
+
+
+
+
+
+
+
+
+    </script>
 
 </html>

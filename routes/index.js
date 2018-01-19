@@ -141,24 +141,24 @@ router.post('/api/find',function (req,res,next) {
 
     var key = req.body.key;
     //检查商品名 是否被使用
-    GoodModel.find({name: key},function (err,docs) {
-        if (docs.length <= 0){
-            result.code = -120;
-            result.messages = "该商品不存在";
+    var pageNow = Number(req.body.pageNow);
+    var pageRecord = Number(req.body.pageRecord);
+    var datebase = GoodModel.find({"name":{$regex:key}});
 
-            res.json(result);
-            return;
-        }else{
+    console.log(datebase);
 
-
+    datebase.skip((pageNow-1) * pageRecord);
+    datebase.limit(pageRecord);
+    datebase.exec(function (err,docs) {
+        GoodModel.count({"name":{$regex:key}},function(err,count){
+            console.log("数量"+count);
             console.log(docs);
-        }
-        
+            // res.json({res:docs,res:count});
+            res.json({res:docs});
+        })
 
-    });
-
-
-});
+    })
+})
 
 
 

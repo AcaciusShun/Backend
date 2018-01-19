@@ -4,6 +4,7 @@
   padding: 0;
 }
 body,html{
+  position: relative;
   background: url(../images/body_bj.jpg);
   padding: 10px;
   min-width: 773px;
@@ -34,7 +35,7 @@ h1{
   padding: 7px 10px;
   margin: 0 0 10px 0;
   overflow: hidden;
-  .h1_span1{
+  .top_span1{
     color: #4c4c4c;
     font-size: 18px;
     font-weight: normal;
@@ -43,10 +44,10 @@ h1{
       outline: none;
     }
   }
-  .h1_span3{
+  .top_span3{
     margin-top: 5px;
   }
-  .h1_span4{
+  .top_span4{
     float: right;
     margin-top: 10px;
     height: 26px;
@@ -63,6 +64,7 @@ h1{
 
 }
 #form_select{
+  //width: 1000px;
   background: #f3f3f3 url(../images/th_bg.gif) repeat-x;
   border: 1px solid #ddd;
   padding: 5px;
@@ -98,6 +100,7 @@ h1{
   }
 }
 #shop_list{
+  width: 1200px;
   .shop_list_ul{
     .shop_list_li{
       background: white;
