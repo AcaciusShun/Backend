@@ -156,7 +156,6 @@ main {
 
 iframe {
   float: left;
-  background: #55a532;
   min-height: 100px; }
   iframe html body {
     padding: 0;

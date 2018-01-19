@@ -545,12 +545,10 @@
 
 <script>
     function addGoodsFun() {
-        console.log("商品名" + $("#goods_name").val());
-        console.log("价格" +  $("#price").val());
-        console.log("重量" + $("#weight").val());
-        console.log("库存" + $("#reserve").val());
-
-
+        // console.log("商品名" + $("#goods_name").val());
+        // console.log("价格" +  $("#price").val());
+        // console.log("重量" + $("#weight").val());
+        // console.log("库存" + $("#reserve").val());
         $.ajax({
             url  : "/api/addGoods",
             type : "post",

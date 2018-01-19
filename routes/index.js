@@ -102,7 +102,7 @@ router.post('/api/addGoods',function (req,res,next) {
     };
 
 
-    //检查用户名 是否被使用
+    //检查商品名 是否被使用
     GoodModel.find({name: name},function (err,docs) {
         if (docs.length > 0){
             result.code = -119;
@@ -135,6 +135,32 @@ router.post('/api/addGoods',function (req,res,next) {
         });
     });
 });
+
+router.post('/api/find',function (req,res,next) {
+    console.log(req.body);
+
+    var key = req.body.key;
+    //检查商品名 是否被使用
+    GoodModel.find({name: key},function (err,docs) {
+        if (docs.length <= 0){
+            result.code = -120;
+            result.messages = "该商品不存在";
+
+            res.json(result);
+            return;
+        }else{
+
+
+            console.log(docs);
+        }
+        
+
+    });
+
+
+});
+
+
 
 
 router.get('/loginAction', function(req, res) {

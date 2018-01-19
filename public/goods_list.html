@@ -1,221 +1,80 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>ECSHOP 管理中心 - 商品列表 </title>
-    <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="css/general.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="js/jquery-1.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-</head>
-
-<body>
-    <h1>
-<span class="action-span"><a href="">添加新商品</a></span>
-<span class="action-span1"><a href="">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品列表 </span>
-
-
-
-
-
-
-<!-- 商品管理 -->
-<span class="help_sub"><a target="_blank" title="商品列表帮助文档" href=""><img src="images/jnsy.png"></a></span>
-
-<div style="clear:both"></div>
-</h1>
-    <!-- 商品搜索 -->
-    <div class="form-div">
-        <form action="javascript:searchGoods()" name="searchForm">
-            <img src="images/icon_search.gif" alt="SEARCH" width="26" height="22" border="0">
-            <!-- 分类 -->
-            <select name="cat_id">
-                <option value="0" selected="selected">所有分类</option>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/list.css"/>
+        <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+    </head>
+    <body>
+        <h1>
+            <span class="h1_span1"><a href="#">ECSHOP管理中心</a></span>
+            <span class="h1_span1">- 商品列表</span>
+            <span class="h1_span3"><a href="#"><img src="images/jnsy.png"/></a></span>
+            <span class="h1_span4">添加新商品</span>
+        </h1>
+        <div id="form_select">
+            <img src="images/icon_search.gif"/>
+            <select name="" class="select1">
+                <option value="">所有分类</option>
             </select>
-            <!-- 品牌 -->
-            <select name="brand_id">
-                <option value="0" selected="selected">所有品牌</option>
+            <select name="" class="select2">
+                <option value="" >所有品牌</option>
             </select>
-            <!-- 推荐 -->
-            <select name="intro_type">
-                <option value="0" selected="selected">全部</option>
+            <select name="" class="select3">
+                <option value="">全部</option>
             </select>
-            <!-- 上架 -->
-            <select name="is_on_sale">
-                <option value="" selected="selected">全部</option>
-                <option value="1">上架</option>
-                <option value="0">下架</option>
+            <select name="" class="select4">
+                <option value="">全部</option>
             </select>
-            <!-- 关键字 -->
             关键字
-            <input name="keyword" size="15" type="text">
-            <input value=" 搜索 " class="button" type="submit" onclick="find()">
-        </form>
-    </div>
-    <script language="JavaScript">
-    function searchGoods() {
-
-        listTable.filter['cat_id'] = document.forms['searchForm'].elements['cat_id'].value;
-        listTable.filter['brand_id'] = document.forms['searchForm'].elements['brand_id'].value;
-        listTable.filter['intro_type'] = document.forms['searchForm'].elements['intro_type'].value;
-        listTable.filter['is_on_sale'] = document.forms['searchForm'].elements['is_on_sale'].value;
-
-        listTable.filter['keyword'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-        listTable.filter['page'] = 1;
-
-        listTable.loadList();
-    }
-    </script>
-    <!-- 商品列表 -->
-    <div>
-        <!-- start goods list -->
-        <div class="list-div" id="listDiv">
-            <table cellspacing="1" cellpadding="3">
-                <tbody>
-                    <tr>
-                        <th>
-                            <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
-                            <a href="javascript:listTable.sort('goods_id');">编号</a><img src="images/sort_desc.gif"> </th>
-                        <th><a href="javascript:listTable.sort('goods_name');">商品名称</a></th>
-                        <th><a href="javascript:listTable.sort('goods_sn');">货号</a></th>
-                        <th><a href="javascript:listTable.sort('shop_price');">价格</a></th>
-                        <th><a href="javascript:listTable.sort('is_on_sale');">上架</a></th>
-                        <th><a href="javascript:listTable.sort('is_best');">精品</a></th>
-                        <th><a href="javascript:listTable.sort('is_new');">新品</a></th>
-                        <th><a href="javascript:listTable.sort('is_hot');">热销</a></th>
-                        <th><a href="javascript:listTable.sort('sort_order');">推荐排序</a></th>
-                        <th><a href="javascript:listTable.sort('goods_number');">库存</a></th>
-                        <th><a href="javascript:listTable.sort('virtual_sales');">虚拟销量</a></th>
-                        <th>操作</th>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="checkboxes[]" value="231" type="checkbox">231</td>
-                        <td class="first-cell" style=""><span>冰糖葫芦娃</span></td>
-                        <td align="center"><span>ECS0</span></td>
-                        <td align="center"><span>0.00</span></td>
-                        <td align="center"><img src="images/no.gif"></td>
-                        <td align="center"><img src="images/no.gif"></td>
-                        <td align="center"><img src="images/no.gif"></td>
-                        <td align="center"><img src="images/no.gif"></td>
-                        <td align="center"><span>100</span></td>
-                        <td align="center"><span>1</span></td>
-                        <td align="center"><span>0</span></td>
-                        <td align="center">
-                            <a href="" target="_blank" title="查看"><img src="images/icon_view.gif" width="21" height="21" border="0"></a>
-                            <a href=" " title=" 编辑 "><img src="images/icon_edit.gif " width="21 " height="21 " border="0 "></a>
-                            <a href=" " title="复制 "><img src="images/icon_copy.gif " width="21 " height="21 " border="0 "></a>
-                            <a href="javascript:; " title="回收站 "><img src="images/icon_trash.gif " width="21 " height="21 " border="0 "></a>
-                            <img src="images/empty.gif " width="21 " height="21 " border="0 "> </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- end goods list -->
-            <!-- 分页 -->
-            <table id="page-table " cellspacing="0 ">
-                <tbody>
-                    <tr>
-                        <td nowrap="true " align="right ">
-                            <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-                            <div id="turn-page ">
-                                总计 <span id="totalRecords ">21</span> 个记录分为 <span id="totalPages ">2</span> 页当前第 <span id="pageCurrent ">1</span> 页，每页
-                                <input size="3 " id="pageSize " value="15 " onkeypress="return listTable.changePageSize(event) " type="text ">
-                                <span id="page-link ">
-						          <a href=" ">第一页</a>
-						          <a href=" ">上一页</a>
-						          <a href=" ">下一页</a>
-						          <a href=" ">最末页</a>
-							      <select id="gotoPage ">
-						            <option value="1 " selected="selected ">1</option>
-						            <option value="2 ">2</option>          
-							      </select>
-        						</span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <input type="text" name="text" id="text" value="" />
+            <input type="button" name="btn" id="btn" class="search" value="搜索" />
         </div>
-        <div>
-            <input name="act " value="batch " type="hidden ">
-            <select name="type " id="selAction " onchange="changeAction() ">
-                <option value=" " selected="selected ">请选择...</option>
-            </select>
-            <select name="target_cat " style="display:none ">
-                <option value="0 " selected="selected ">请选择...</option>
-            </select>
-            <input name="extension_code " value=" " type="hidden ">
-            <input value=" 确定 " id="btnSubmit " name="btnSubmit " class="button " disabled="true " type="submit ">
+        <div id="shop_list">
+            <ul class="shop_list_ul">
+                <li class="shop_list_head shop_list_li">
+                    <ul>
+                        <li ><input type="checkbox"id="" value="" />编号</li>
+                        <li>商品名称</li>
+                        <li>货号</li>
+                        <li>价格</li>
+                        <li>上架</li>
+                        <li>精品</li>
+                        <li>新品</li>
+                        <li>热销</li>
+                        <li>推荐排序</li>
+                        <li>库存</li>
+                        <li>虚拟销量</li>
+                        <li>操作</li>
+                    </ul>
+                </li>
+                
+                
+            </ul>
+            <div class="shop_list_foot">
+                <ul>
+                    <li>总共分为<span class="recordAll"></span>个记录</li>
+                    <li>分为<span class="pageAll"></span>页</li>
+                    <li>当前第<span class="currentPage"></span>页</li>
+                    <li>每页<input type="text" name="counts" id="counts" class="pageRecord" value="4" /></li>
+                    <li><a href="#" class="firstpage">第一页</a></li>
+                    <li><a href="#" class="uppage">上一页</a></li>
+                    <li><a href="#" class="nextpage">下一页</a></li>
+                    <li><a href="#" class="lastpage">最末页</a></li>
+                    <li>
+                        <select name="selectPage" class="selectPage">
+                            <option value="1" class="on">1</option>
+                        </select>
+                    </li>
+                </ul>
+                </div>
         </div>
-    </div>
-    <div id="footer ">
-        共执行 N 个查询，用时 xxx 秒，Gzip 已禁用，内存占用 3.562 MB
-        <br> 版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-    <!-- 新订单提示信息 -->
-    <div id="popMsg ">
-        <table width="100% " cellspacing="0 " cellpadding="0 " border="0 " bgcolor="#cfdef4 ">
-            <tbody>
-                <tr>
-                    <td style="color: #0f2c8c " width="30 " height="24 "></td>
-                    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px " width="100% " valign="center "> 新订单通知</td>
-                    <td style="padding-top: 2px;padding-right:2px " width="19 " valign="center " align="right "><span title="关闭 " style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px; " onclick="Message.close() ">×</span>
-                        <!-- <img title=关闭 style="cursor: hand " onclick=closediv() hspace=3 src="msgclose.jpg "> --></td>
-                </tr>
-                <tr>
-                    <td style="padding-right: 1px; padding-bottom: 1px " colspan="3 " height="70 ">
-                        <div id="popMsgContent ">
-                            <p>您有 <strong style="color:#ff0000 " id="spanNewOrder ">1</strong> 个新订单以及 <strong style="color:#ff0000 " id="spanNewPaid ">0</strong> 个新付款的订单</p>
-                            <p style="word-break:break-all " align="center "><a href="http://www.doudoufei.top/shops/admin/order.php?act=list "><span style="color:#ff0000 ">点击查看新订单</span></a></p>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <script language="JavaScript ">
-    document.getElementById("listDiv ").onclick = function(e) {
-        var obj = Utils.srcElement(e);
+        <div id="foot_mes">
 
-        if (obj.tagName == "INPUT " && obj.type == "checkbox ") {
-            if (!document.forms['listForm']) {
-                return;
-            }
-            var nodes = document.forms['listForm'].elements;
-            var checked = false;
-
-            for (i = 0; i < nodes.length; i++) {
-                if (nodes[i].checked) {
-                    checked = true;
-                    break;
-                }
-            }
-            if (document.getElementById("btnSubmit ")) {
-                document.getElementById("btnSubmit ").disabled = !checked;
-            }
-            for (i = 1; i <= 10; i++) {
-                if (document.getElementById("btnSubmit " + i)) {
-                    document.getElementById("btnSubmit " + i).disabled = !checked;
-                }
-            }
-        }
-    }
-    </script>
-</body>
-<script type="text/javascript">
-	function find(){
+            <p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
+        </div>
+    </body>
 
 
-
-
-
-	}
-
-
-
-</script>
 </html>
