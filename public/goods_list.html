@@ -76,6 +76,7 @@
         </div>
     </body>
     <script>
+
         var shoplistUl = $(".shop_list_ul");
         var recordAll = $(".recordAll");
         var pageAll = $(".pageAll");
@@ -90,6 +91,35 @@
         var keyWord = $("#key").val();
         var search = $(" .search");
         loading();
+
+
+        search.click(function(){
+            keyWord = $("#text").val()
+            var len =$(".selectPage option").length - 1;
+            shoplistUl.children("li:gt(0)").remove();
+            currentOption = "1";
+            loading();
+        })
+
+
+
+        //跳转页事件
+        function skipPage(page,len) {
+            selectPage.children("option").eq(page).attr("selected", true);
+            selectPage.children("option").eq(page).addClass("on").siblings().removeClass().attr("selected", false);
+            currentOption = $(".selectPage .on").html();
+            shoplistUl.children("li").remove();
+            send();
+        }
+        });
+        //上一页
+
+        //下一页
+
+        //首页
+
+
+
 
         function search_good() {
             var keyWord = $("#key").val();
