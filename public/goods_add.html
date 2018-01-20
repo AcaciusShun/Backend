@@ -68,9 +68,9 @@
                             <td class="label">
                                 <a href="javascript:showNotice('noticeGoodsSN');" title="点击此处查看提示信息"><img src="images/notice.gif" alt="点击此处查看提示信息" width="16" height="16" border="0"></a> 商品货号： </td>
                             <td>
-                                <input id="goods_sn" size="20" type="text"><span id="goods_sn_notice"></span>
+                                <input id="goods_sn" size="20" type="text" value=""><span id="goods_sn_notice"></span>
                                 <br>
-                                <span class="notice-span" style="display:block" id="noticeGoodsSN">如果您不输入商品货号，系统将自动生成一个唯一的货号。</span></td>
+                                <span class="notice-span" style="display:block" id="noticeGoodsSN">请输入货号。</span></td>
                         </tr>
                         <tr>
                             <td class="label">商品分类：</td>
@@ -556,8 +556,9 @@
                 name : $("#goods_name").val(),
                 price : $("#price").val(),
                 // brand : $("#brand").val(),
-                weight : $("#weight").val(),
-                reserve : $("#reserve").val()
+                // weight : $("#weight").val(),
+                reserve : $("#reserve").val(),
+                sn : $("#goods_sn").val()
             },
 
             success : function (res) {

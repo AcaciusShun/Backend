@@ -29,7 +29,7 @@
             </select>
             关键字
             <input type="text" name="text" id="key" value="" />
-            <input type="button" name="btn" id="btn" class="search" value="搜索" />
+            <input type="button" name="btn" id="btn" class="search" value="搜索" onclick="search_good()"/>
         </div>
         <div id="shop_list">
             <ul class="shop_list_ul">
@@ -45,7 +45,7 @@
                         <li>热销</li>
                         <li>推荐排序</li>
                         <li>库存</li>
-                        <li>虚拟销量</li>
+
                         <li>操作</li>
                     </ul>
                 </li>
@@ -76,10 +76,6 @@
         </div>
     </body>
     <script>
-        // var key = $("#key").val();
-        var page_now = $(".PageNow").val();
-        var page_include_num = $(".page_include").val();
-
         var shoplistUl = $(".shop_list_ul");
         var recordAll = $(".recordAll");
         var pageAll = $(".pageAll");
@@ -95,42 +91,74 @@
         var search = $(" .search");
         loading();
 
+        function search_good() {
+            var keyWord = $("#key").val();
+            var len =$(".selectPage option").length - 1;
+            shoplistUl.children("li:gt(0)").remove();
+            loading();
+        }
+
+
         function loading() {
 
             $.ajax({
-                url : "/api/find",
-                type : "post",
-                data:{
-                    key : keyWord,
-                    pageNow : currentOption,
-                    pageRecord : pageRecord.val()
+                url: "/api/find",
+                type: "post",
+                data: {
+                    key: keyWord,
+                    pageNow: currentOption,
+                    pageRecord: pageRecord.val()
                 },
-                success:function (res) {
+
+                success: function (res) {
                     console.log(res);
                     var data = res.res;
 
-                    for(var key in data){
-                        var li ="";
+                    for (var key in data) {
+                        var li = "";
                         li +=
                             `<li class="shop_list_head shop_list_li">
 						<ul>
-						<li class="shop_num"><input type="checkbox"id="" value="" />141</li>
-						<li class="shop_name">${data[key].goodsname}</li>
-						<li class="shop_hh">${data[key].goodsnum}</li>
-						<li class="shop_price">${data[key].goodsprice}</li>
+						<li class="shop_num"><input type="checkbox" id="" value="" />141</li>
+						<li class="shop_name">${data[key].name}</li>
+						<li class="shop_hh">${data[key].sn}</li>
+						<li class="shop_price">${data[key].price}</li>
 						<li><img src="images/yes.gif"/></li>
 						<li><img src="images/yes.gif"/></li>
 						<li><img src="images/yes.gif"/></li>
 						<li><img src="images/yes.gif"/></li>
-						<li>100</li>
-						<li>98</li>
-						<li>${data[key].goodsshop}</li>
+						<li>1</li>
+						<li>999</li>
+
 						<li class="shop_use"><a href=""><img src="images/icon_edit.gif" alt="" /></a><a href=""><img src="images/icon_trash.gif"/></a></li>
 						</ul>
 					</li>
 					`;
                         shoplistUl.append(li);
                     }
+                    //获取分页数
+                    var pages = Math.ceil(res.count / pageRecord.val());
+
+                    var optionsLen = $(".selectPage option").length;
+
+                    //添加跳转分页数
+                    var len = pages - 1
+                    if (pages > optionsLen) {
+                        for (var k = optionsLen + 1; k <= pages; k++) {
+                            var _option = "";
+                            _option += `<option value=${k}>${k}</option>`
+                            selectPage.append(_option);
+                        }
+                    } else {
+                        selectPage.children("option:gt(" + len + ")").remove()
+                    }
+                    console.log(currentOption);
+                    console.log(pages);
+                    console.log(res.count);
+                    // 改变跳转页下拉数字
+                    currentPage.html(currentOption);
+                    pageAll.html(pages);
+                    recordAll.html(res.count);
                 }
             })
         }

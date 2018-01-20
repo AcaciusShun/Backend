@@ -4,6 +4,8 @@ var Schema  = mongoose.Schema;
 var Good = new Schema({
     name : String,
     price : String,
+    sn : String,
+    flag : Number,
     // classes : String,
     reserve : Number,
     weight : Number,

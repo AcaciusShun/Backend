@@ -95,6 +95,7 @@ router.post('/api/addGoods',function (req,res,next) {
     var reserve = req.body.reserve;
     var weight = req.body.weight;
     // var brand = req.body.brand;
+    var sn = req.body.sn;
 
     var result = {
         code : 10,
@@ -119,11 +120,13 @@ router.post('/api/addGoods',function (req,res,next) {
         gm.price = price;
         // gm.classes = classes;
         gm.reserve = reserve;
-        gm.weight = weight;
+        // gm.weight = weight;
+        gm.sn = sn;
         // gm.brand = brand;
         console.log(gm.name);
         //异步处理 回调函数
         gm.save(function (err) {
+            console.log(err);
             if (err){
                 result.code = -10;
                 result.messages = "保存失败";
