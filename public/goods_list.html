@@ -76,80 +76,60 @@
         </div>
     </body>
     <script>
-
-        //未完成状态  周日实现
-
-
-        var shoplistUl = $(".shop_list_ul");
-        var recordAll = $(".recordAll");
-        var pageAll = $(".pageAll");
-        var currentPage = $(".currentPage");
-        var pageRecord = $(".pageRecord");
-        var selectPage = $(".selectPage");
-        var currentOption = $(".selectPage .on").html();
-        var firstPage = $(".firstpage");
-        var lastPage = $(".lastpage");
-        var upPage = $(".uppage");
-        var downPage = $(".nextpage");
-        var keyWord = $("#key").val();
-        var search = $(" .search");
-        loading();
+        $(function () {
 
 
-        search.click(function(){
-            keyWord = $("#text").val()
-            var len =$(".selectPage option").length - 1;
-            shoplistUl.children("li:gt(0)").remove();
-            currentOption = "1";
-            loading();
-        })
-
-
-
-        //跳转页事件
-        function skipPage(page,len) {
-            selectPage.children("option").eq(page).attr("selected", true);
-            selectPage.children("option").eq(page).addClass("on").siblings().removeClass().attr("selected", false);
-            currentOption = $(".selectPage .on").html();
-            shoplistUl.children("li").remove();
-            send();
-        }
-        //上一页
-
-        //下一页
-
-        //首页
-
-
-
-
-        function search_good() {
+            var shoplistUl = $(".shop_list_ul");
+            var recordAll = $(".recordAll");
+            var pageAll = $(".pageAll");
+            var currentPage = $(".currentPage");
+            var pageRecord = $(".pageRecord");
+            var selectPage = $(".selectPage");
+            var currentOption = $(".selectPage .on").html();
+            var firstPage = $(".firstpage");
+            var lastPage = $(".lastpage");
+            var upPage = $(".uppage");
+            var downPage = $(".nextpage");
             var keyWord = $("#key").val();
-            var len =$(".selectPage option").length - 1;
-            shoplistUl.children("li:gt(0)").remove();
+            var search = $(" .search");
             loading();
-        }
 
 
-        function loading() {
+            search.click(function(){
+                keyWord = $("#key").val();
+                var len =$(".selectPage option").length - 1;
+                shoplistUl.children("li:gt(0)").remove();
+                currentOption = "1";
+                loading();
+            })
 
-            $.ajax({
-                url: "/api/find",
-                type: "post",
-                data: {
-                    key: keyWord,
-                    pageNow: currentOption,
-                    pageRecord: pageRecord.val()
-                },
 
-                success: function (res) {
-                    console.log(res);
-                    var data = res.res;
 
-                    for (var key in data) {
-                        var li = "";
-                        li +=
-                            `<li class="shop_list_head shop_list_li">
+            function search_good() {
+                var keyWord = $("#key").val();
+                var len =$(".selectPage option").length - 1;
+                shoplistUl.children("li:gt(0)").remove();
+                loading();
+            }
+
+
+            function loading() {
+                $.ajax({
+                    url: "/api/find",
+                    type: "post",
+                    data: {
+                        key: keyWord,
+                        pageNow: currentOption,
+                        pageRecord: pageRecord.val()
+                    },
+                    success: function (res) {
+                        console.log(res);
+                        var data = res.res;
+
+                        for (var key in data) {
+                            var li = "";
+                            li +=
+                                `<li class="shop_list_head shop_list_li">
 						<ul>
 						<li class="shop_num"><input type="checkbox" id="" value="" />141</li>
 						<li class="shop_name">${data[key].name}</li>
@@ -166,42 +146,42 @@
 						</ul>
 					</li>
 					`;
-                        shoplistUl.append(li);
-                    }
-                    //获取分页数
-                    var pages = Math.ceil(res.count / pageRecord.val());
-
-                    var optionsLen = $(".selectPage option").length;
-
-                    //添加跳转分页数
-                    var len = pages - 1
-                    if (pages > optionsLen) {
-                        for (var k = optionsLen + 1; k <= pages; k++) {
-                            var _option = "";
-                            _option += `<option value=${k}>${k}</option>`
-                            selectPage.append(_option);
+                            shoplistUl.append(li);
                         }
-                    } else {
-                        selectPage.children("option:gt(" + len + ")").remove()
+
+                        //计算分页数
+                        var page_All = Math.ceil(res.count / pageRecord.val());
+                        console.log(res.count);
+                        console.log(pageRecord.val());
+                        console.log(page_All);
+
+                        //把分页数 追加到跳转页中 并生成相应页数
+                        var optionslen = $(".selectPage option").length;
+                        var len = page_All - 1;
+
+                        console.log(optionslen);   //1
+                        console.log(len);   //2
+
+                        if (page_All > optionslen){
+                            //当数据页大于当前页数。生成
+                            for(var i = optionslen ; i <page_All ;i++ ){
+                                var option_select = "";
+                                option_select +=`<option varlue = ${i + 1}>${i + 1}</option>`;
+                                selectPage.append(option_select);
+                            }
+                        }else{
+                            selectPage.children("option:gt("+len+")").remove();
+                        }
+                        //更改查询后的返回语句内容
+                        currentPage.html(currentOption);
+                        pageAll.html(page_All);
+                        recordAll.html(res.count);
                     }
-                    console.log(currentOption);
-                    console.log(pages);
-                    console.log(res.count);
-                    // 改变跳转页下拉数字
-                    currentPage.html(currentOption);
-                    pageAll.html(pages);
-                    recordAll.html(res.count);
-                }
-            })
-        }
+                })
+            }
 
-
-
-
-
-
-
-
+        })
+        //未完成状态  周日实现
 
     </script>
 
