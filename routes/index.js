@@ -157,7 +157,7 @@ router.post('/api/find',function (req,res,next) {
             console.log("数量"+count);
             console.log(docs);
             // res.json({res:docs,res:count});
-            res.json({res:docs});
+            res.json({res:docs,count});
         })
 
     })
