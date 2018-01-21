@@ -29,7 +29,7 @@
             </select>
             关键字
             <input type="text" name="text" id="key" value="" />
-            <input type="button" name="btn" id="btn" class="search" value="搜索" onclick="search_good()"/>
+            <input type="button" name="btn" id="btn" class="search" value="搜索"/>
         </div>
         <div id="shop_list">
             <ul class="shop_list_ul">
@@ -77,8 +77,6 @@
     </body>
     <script>
         $(function () {
-
-
             var shoplistUl = $(".shop_list_ul");
             var recordAll = $(".recordAll");
             var pageAll = $(".pageAll");
@@ -97,20 +95,30 @@
 
             search.click(function(){
                 keyWord = $("#key").val();
-                var len =$(".selectPage option").length - 1;
-                shoplistUl.children("li:gt(0)").remove();
+                var len =$(".selectPage option").length -1 ;
+                shoplistUl.children("li").remove();
                 currentOption = "1";
                 loading();
+            });
+
+            //下拉选择事件
+            selectPage.change(function () {
+                var len = $(".selectPage option").length - 1;
+                var page = $(this).children("option:selected").val() -1 ;
+                jumptopage(page,len);
             })
 
 
 
-            function search_good() {
-                var keyWord = $("#key").val();
-                var len =$(".selectPage option").length - 1;
-                shoplistUl.children("li:gt(0)").remove();
+            //页面跳转
+            function jumptopage(page,len) {
+                selectPage.children("option").eq(page).attr("selected",true);
+                selectPage.children("option").eq(page).addClass("on").siblings().removeClass().attr("selected",false);
+                currentOption = $(".selectPage .on").html();
+                shoplistUl.children("li").remove();
                 loading();
             }
+
 
 
             function loading() {
@@ -157,14 +165,14 @@
 
                         //把分页数 追加到跳转页中 并生成相应页数
                         var optionslen = $(".selectPage option").length;
-                        var len = page_All - 1;
+                        var len = page_All;
 
                         console.log(optionslen);   //1
                         console.log(len);   //2
 
                         if (page_All > optionslen){
                             //当数据页大于当前页数。生成
-                            for(var i = optionslen ; i <page_All ;i++ ){
+                            for(var i = optionslen; i <page_All ;i++ ){
                                 var option_select = "";
                                 option_select +=`<option varlue = ${i + 1}>${i + 1}</option>`;
                                 selectPage.append(option_select);
@@ -179,9 +187,7 @@
                     }
                 })
             }
-
         })
-        //未完成状态  周日实现
 
     </script>
 
